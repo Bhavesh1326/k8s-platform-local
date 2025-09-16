@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Bhavesh1326/k8s-platform-local.git # Double-check your repo URL
+    repoURL: https://github.com/Bhavesh1326/k8s-platform-local.git
     targetRevision: main
     path: istio/istio-control-plane
     helm:
