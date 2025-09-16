@@ -1,0 +1,3 @@
+# This file can be used to override Istio's default values
+# For now, we will use the default settings.
+# Future customizations can be added here.

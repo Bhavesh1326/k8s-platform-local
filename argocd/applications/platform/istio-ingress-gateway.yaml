@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-ingress-gateway
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Bhavesh1326/k8s-platform-local.git # CHANGE THIS
+    targetRevision: HEAD
+    path: istio/istio-ingress
+    helm:
+      repoURL: https://istio-release.storage.googleapis.com/charts
+      chart: gateway
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-ingress
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
